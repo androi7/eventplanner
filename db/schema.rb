@@ -10,22 +10,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_12_110703) do
+ActiveRecord::Schema.define(version: 2020_01_13_105029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
+    t.text "post"
+    t.integer "user_id"
+    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
+    t.date "date"
+    t.string "location"
+    t.string "title"
+    t.text "description"
+    t.string "image"
+    t.string "album"
+    t.integer "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "inspiration_id"
+    t.integer "category"
+  end
+
+  create_table "events_users", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
   end
 
   create_table "inspirations", force: :cascade do |t|
+    t.string "title"
+    t.string "category"
+    t.string "location"
+    t.date "date"
+    t.string "image"
+    t.string "album"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

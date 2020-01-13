@@ -1,0 +1,21 @@
+<%= form_for @event do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :date %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location, :placeholder => 'Location' %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.label :album %>
+
+  <%= f.submit "Create Event" %>
+
+<% end %>
