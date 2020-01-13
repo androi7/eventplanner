@@ -1,18 +1,19 @@
 class UsersController < ApplicationController
 
-  before_action :check_if_logged_in, except: [ :new ]
+  before_action :check_if_logged_in, except: [ :new, :create ]
 
   def new
     @user = User.new
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.create user_params
     if @user.persisted?
       redirect_to '/'
     else
-      redirect_to '/signup'
+      redirect_to '/users'
     end
+
   end
 
   def index

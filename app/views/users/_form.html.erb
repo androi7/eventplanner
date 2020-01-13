@@ -1,4 +1,4 @@
-<% form_for @user do |f| %>
+<%= form_for @user do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name, :placeholder => "Username" %>
@@ -12,6 +12,6 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
 
-  <%= f.submit "Sign up", signup_path %>
+  <%= f.submit "Sign up" %>
 
 <% end %>
