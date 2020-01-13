@@ -8,6 +8,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string  :image
       t.string  :album
       t.integer :admin
+      t.integer :category_id
       t.timestamps
     end
   end

@@ -12,3 +12,13 @@ User.create! name: 'user1', email: 'user1@email', password: 'a'
 User.create! name: 'user2', email: 'user2@email', password: 'a'
 User.create! name: 'user3', email: 'user3@email', password: 'a'
 User.create! name: 'user4', email: 'user4@email', password: 'a'
+
+
+Category.create! title: "Beach", image: "beach.jpg"
+Category.create! title: "Adventure", image: "adventure.jpg"
+Category.create! title: "Hiking", image: "hiking.jpg"
+Category.create! title: "Skiing", image: "skiing.jpg"
+Category.create! title: "Travel", image: "travel.jpg"
+Category.create! title: "Gaming", image: "gaming.jpg"
+Category.create! title: "Biking", image: "biking.jpg"
+Category.create! title: "Meditation", image: "meditation.jpg"

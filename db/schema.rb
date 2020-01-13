@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_105029) do
+ActiveRecord::Schema.define(version: 2020_01_13_120807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "title"
+    t.text "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "post"
@@ -31,10 +38,10 @@ ActiveRecord::Schema.define(version: 2020_01_13_105029) do
     t.string "image"
     t.string "album"
     t.integer "admin"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "inspiration_id"
-    t.integer "category"
   end
 
   create_table "events_users", force: :cascade do |t|

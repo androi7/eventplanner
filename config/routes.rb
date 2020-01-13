@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'categories/index'
   root to: 'session#new'
   get '/login' => 'session#new'  # login form
   post '/login' => 'session#create'  # form submit, check credentials, create session
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
   patch '/users/:id' => 'users#update'
   delete '/users/:id' => 'users#destroy'
 
+  get '/categories' => 'categories#index'
+  
   resources :events
+
 
 end

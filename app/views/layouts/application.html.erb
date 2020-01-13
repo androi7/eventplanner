@@ -1,29 +1,68 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Eventplanner</title>
+    <title>Event Creator</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <nav>
-    <% if @current_user %>
-      <ul>
-        <li><%= @current_user.email %></li>
-        <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-      </ul>
-    <% else %>
-      <ul>
-        <li><%= link_to "Login", 'login' %></li>
-        <li><%= link_to "Signup", '/users/new' %></li>
-      </ul>
-    <% end %>
-    </nav>
+    <header class="header">
+      <div class="container">
+        <nav>
+        <% if @current_user %>
+          <ul>
+            <li><%= @current_user.email %></li>
+            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+          </ul>
+        <% else %>
+          <ul>
+            <li><%= link_to "Login", 'login' %></li>
+            <li><%= link_to "Signup", '/users/new' %></li>
+          </ul>
+        <% end %>
+        </nav>
+      </div>
+    </header>
 
-    <%= yield %>
+    <main class="main">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <ul>
+              <h3>About</h3>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Jobs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <h3>Support</h3>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Get Started</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul>
+              <h3>Community</h3>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Google+</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
