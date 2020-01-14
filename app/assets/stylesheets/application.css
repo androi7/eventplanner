@@ -24,6 +24,7 @@
   width: 100%;
 }
 
+/* ul li do not response properly according to responsive web design */
 .nav ul {
   list-style: none;
   height: 4rem;

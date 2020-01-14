@@ -16,6 +16,12 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create event_params
+    if @event.save
+      flash[:notice] = 'Event was successfully created.'
+    else
+      flash.now[:error] = 'Could not create event.'
+      render :new
+    end
   end
 
   def edit

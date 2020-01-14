@@ -4,14 +4,15 @@
   <%= f.text_field :name, :placeholder => "Username" %>
 
   <%= f.label :email %>
-  <%= f.email_field :email, :placeholder => "Email" %>
+  <%= f.email_field :email, :placeholder => "Email"%>
+  <!-- , :readonly => true if read -->
+
 
   <%= f.label :password %>
-  <%= f.password_field :password, :placeholder => "Password" %>
+  <%= f.password_field :password, :placeholder => "Password"%>
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, :placeholder => "Confirm Password" %>
 
-  <%= f.submit "Sign up" %>
-
+  <%= f.submit submit %>
 <% end %>

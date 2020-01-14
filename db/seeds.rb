@@ -8,10 +8,10 @@
 
 User.destroy_all
 
-User.create! name: 'user1', email: 'user1@email', password: 'a'
-User.create! name: 'user2', email: 'user2@email', password: 'a'
-User.create! name: 'user3', email: 'user3@email', password: 'a'
-User.create! name: 'user4', email: 'user4@email', password: 'a'
+u1 = User.create! name: 'User1', email: 'user1@email.com', password: 'a'
+u2 = User.create! name: 'User2', email: 'user2@email.com', password: 'a'
+u3 = User.create! name: 'User3', email: 'user3@email.com', password: 'a'
+u4 = User.create! name: 'User4', email: 'user4@email.com', password: 'a'
 
 
 Category.create! title: "Beach", image: "beach.jpg"

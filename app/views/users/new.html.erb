@@ -1,2 +1,12 @@
 <h1>Sign up</h1>
-<%= render partial: 'form' %>
+
+<% if @user.errors.any? %>
+  <p>Following errors occured:</p>
+  <ul>
+    <% @user.errors.full_messages.each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render partial: 'form', locals: {submit: 'Sign up', read: false} %>
