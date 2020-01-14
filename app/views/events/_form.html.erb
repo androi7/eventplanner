@@ -7,7 +7,7 @@
   <%= f.text_field :image %>
 
   <%= f.label :date %>
-  <%= f.date_field :date %>
+  <%= f.date_field :date, min: Date.today %>
 
   <%= f.label :location %>
   <%= f.text_field :location, :placeholder => 'Location' %>

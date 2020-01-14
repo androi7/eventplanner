@@ -85,13 +85,15 @@
    padding: 5px 0;
  }
 
- .category-card {
+ .category-card,
+ .event-card {
    color: #fff;
    display: block;
    margin: 4px 0;
  }
 
- .category-card h2 {
+ .category-card h2,
+ .event-titles {
   color: #fff;
   position: absolute;
   left: 0;
@@ -101,14 +103,22 @@
   padding: 0 20px 0;
 }
 
-.categories img {
+.event-titles {
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 90%;
+}
+
+.categories img,
+.events img {
   display: block;
   width:100%;
   max-width:100%;
   height: auto;
 }
 
-.category-card p {
+.category-card p,
+.event-card p {
   color: #0f0f0f;
   font-size: 14px;
   font-weight: 300;

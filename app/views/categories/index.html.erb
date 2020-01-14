@@ -5,9 +5,10 @@
     <div class="category-cards row">
       <% @categories.each do |c| %>
         <div class="category-card col-4">
+          <%= link_to category_path(c.id) do %>
           <%= image_tag c.image %>
           <h2><%= c.title %></h2>
-          <%= link_to "Events", events_path(c.events) %>
+          <% end %>
         </div>
       <% end %>
     </div>

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   root to: 'pages#index'
-  
+
   get '/login' => 'session#new'  # login form
   post '/login' => 'session#create'  # form submit, check credentials, create session
   delete '/logout' => 'session#destroy'  # logout (delete session)
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   delete '/users/:id' => 'users#destroy'
 
   get '/categories' => 'categories#index'
+  get '/categories/:id' => 'categories#show', as: 'category'
 
   resources :events
 
