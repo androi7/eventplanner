@@ -1,0 +1,41 @@
+
+<div class="container filter-container">
+  <div class="filters row justify-content-center">
+    <section class="col-md-3">
+      <%= link_to new_event_path do %>
+      <div class="card bg-dark text-white">
+        <%= image_tag "create-24px.svg", :class => 'card-img' %>
+        <div class="card-img-overlay">
+          <h1 class="card-title text-center">Create</h1>
+        </div>
+      </div>
+      <% end %>
+    </section>
+    <section class="col-md-3">
+      <div class="card bg-dark text-white">
+        <%= image_tag "search-24px.svg", :class => 'card-img' %>
+        <div class="card-img-overlay">
+          <h1 class="card-title text-center">Search</h1>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="filters row justify-content-center">
+    <section class="col-md-3">
+      <div class="card bg-dark text-white">
+        <%= image_tag "favorite_border-24px.svg", :class => 'card-img' %>
+        <div class="card-img-overlay">
+          <h1 class="card-title text-center">Inspire</h1>
+        </div>
+      </div>
+    </section>
+    <section class="col-md-3">
+      <div class="card bg-dark text-white">
+        <%= image_tag "person_outline-24px.svg", :class => 'card-img' %>
+        <div class="card-img-overlay">
+          <h1 class="card-title text-center">My List</h1>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
