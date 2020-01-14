@@ -1,1 +1,16 @@
+<h1>Events</h1>
 
+<div class="events">
+  <div class="container">
+    <div class="event-cards row">
+      <% @events.each do |event| %>
+        <div class="event-cards col-6">
+          <%= image_tag event.image %>
+          <h1><%= event.title %></h1>
+          <h2><%= event.location %></h2>
+          <h2><%= event.date %></h2>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

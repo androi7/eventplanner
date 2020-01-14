@@ -25,13 +25,25 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @event = Event.find params[:id]
   end
 
   def update
+    @event = Event.find params[:id]
+    if @event.update(event_params)
+      redirect_to event_path(@event.id)
+    else
+      redirect_to edit_event_path(@event.id)
+    end
   end
 
   def destroy
+    @event = Event.find params[:id]
+    @event.destroy
+    redirect_to events_path
   end
+
+  private
 
   def event_params
     params.require(:event).params(:date, :location, :title, :description, :thumbnail, :album)

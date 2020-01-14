@@ -7,14 +7,20 @@
   <%= f.text_field :image %>
 
   <%= f.label :date %>
+  <%= f.date_field :date %>
 
   <%= f.label :location %>
   <%= f.text_field :location, :placeholder => 'Location' %>
 
   <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_area :description, col: 20, row: 40 %>
 
   <%= f.label :album %>
+  <%= f.text_field :album %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
 
   <%= f.submit "Create Event" %>
 
