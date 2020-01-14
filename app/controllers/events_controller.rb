@@ -1,14 +1,15 @@
 class EventsController < ApplicationController
 
   before_action :check_if_logged_in
+  helper_method :date_format
 
   def index
     @events = Event.all
-    
+
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find params[:id]
   end
 
   def new
@@ -46,8 +47,12 @@ class EventsController < ApplicationController
 
   private
 
+  def date_format d
+    d.strftime('%d. %b %Y')
+  end
+
   def event_params
-    params.require(:event).params(:date, :location, :title, :description, :thumbnail, :album)
+    params.require(:event).params(:date, :location, :title, :description, :image, :album)
   end
 
 end
