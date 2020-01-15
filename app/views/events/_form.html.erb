@@ -1,23 +1,57 @@
+<div class="event-create_form justify-content-center col-md-6">
 <%= form_for @event do |f| %>
+  <div class="form-group col-md-12">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => "form-control" %>
+  </div>
 
-  <%= f.label :title %>
-  <%= f.text_field :title, :required => true %>
+  <div class="form-group col-md-6">
+    <%= f.label :category %>
+    <%= f.select :category_id, Category.all.collect { |c| [c.title, c.id] }, {}, {:class => "custom-select custom-select-sm"} %>
+  </div>
 
-  <%= f.label :image %>
-  <%= f.text_field :image %>
 
-  <%= f.label :date %>
-  <%= f.date_field :date, min: Date.today, :required => true %>
+  <div class="form-group col-md-12">
+    <%= f.label :location %>
+    <%= f.text_field :location, :placeholder => 'Location', :class => "form-control"%>
+  </div>
+  <!-- <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <# f.label :location %>
+      <# f.text_field :location, :placeholder => 'City', :class => "form-control", :required => true %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <# f.label :state %>
+      <# f.text_field :state, :placeholder => 'State', :class => "form-control", :required => true %>
+    </div>
+    <div class="col-md-3 mb-3">
+      <# f.label :zip %>
+      <# f.text_field :zip, :placeholder => 'Zip', :class => "form-control", :required => true %>
+    </div>
+  </div> -->
+  <div class="form-group col-md-12">
+    <%= f.label :date %>
+    <%= f.date_field :date, min: Date.today, :class => "form-control" %>
+  </div>
+  <!-- <div class="form-group col-md-3">
+    <# f.label :time %>
+    <# f.date_field :time, :class => "form-control" %>
+  </div> -->
+  <div class="form-group col-md-12">
+    <%= f.label :image %>
+    <%= f.text_field :image, :class => "form-control" %>
+  </div>
+  <div class="form-group col-md-12">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => "form-control", rows: 7 %>
+  </div>
 
-  <%= f.label :location %>
-  <%= f.text_field :location, :placeholder => 'Location', :required => true %>
+  <div class="form-group col-md-12">
+    <%= f.label :album %>
+    <%= f.text_field :album, :class => "form-control" %>
+  </div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description, col: 20, row: 40 %>
 
-  <%= f.label :album %>
-  <%= f.text_field :album %>
-  
-  <%= f.submit "Create Event" %>
-
+  <%= f.submit "Create Event", :class => "btn-event btn btn-outline-dark" %>
 <% end %>
+</div>

@@ -1,3 +1,40 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.event-create_form {
+  border-radius: 0.5rem;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 1px 1px 1px black;
+  margin: 4rem auto;
+  padding: 3rem;
+}
+
+.form-group {
+  padding: 0;
+  margin: 0;
+}
+
+.form-group label {
+  font-size: 1rem;
+}
+
+.btn-event {
+  margin-top: 2rem;
+}
+
+
+.card-background {
+  height: 15rem;
+  background-size: cover;
+  width: 100%;
+  padding: 0;
+}
+
+.card-body {
+  color: black;
+}
+
+.event-card.col-md-6 {
+  padding: 0;
+}

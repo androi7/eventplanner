@@ -20,6 +20,7 @@ class EventsController < ApplicationController
     @event = Event.create event_params
     if @event.save
       flash[:notice] = 'Event was successfully created.'
+      redirect_to event_path(@event.id)
     else
       flash.now[:error] = 'Could not create event.'
       render :new
@@ -52,7 +53,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).params(:date, :location, :title, :description, :image, :album)
+    params.require(:event).permit(:date, :location, :title, :description, :image, :album, :category_id)
   end
 
 end
