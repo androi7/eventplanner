@@ -1,4 +1,3 @@
-<%= raise 'hell' %>
 <%= form_for @user do |f| %>
   <div class="form-group">
     <%= f.label :name %>
@@ -6,9 +5,13 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :email %> <%= @user.email %>
+    <%= f.label :email %>
+    <% if @user.persisted? %>
+      <%= @user.email %>
+    <% else %>
+      <%= f.email_field :email, :placeholder => "Email" %>
+    <% end %>
   </div>
-  <!-- , :readonly => true if read -->
 
   <div class="form-group">
     <%= f.label :password %>
