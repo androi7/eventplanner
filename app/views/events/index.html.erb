@@ -4,18 +4,19 @@
   <div class="container">
     <div class="event-cards row">
       <% @events.each do |event| %>
-        <%= link_to event_path(event.id) do %>
-          <div class="event-card col-6">
-            <% if event.image.present? %>
-            <%= image_tag event.image %>
-            <% end %>
+        <div class="event-card col-6">
+          <% if event.image.present? %>
+          <%= image_tag event.image %>
+          <% end %>
+          <%= link_to event_path(event.id) do %>
             <div class="event-titles">
               <h2><%= event.title %></h2>
               <h2><%= event.location %></h2>
               <h2><%= date_format event.date %></h2>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+          <%= button_to "Join Event", joingroup_event_path(event.id), :method => :put %>
+        </div>
       <% end %>
     </div>
   </div>

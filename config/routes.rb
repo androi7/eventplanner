@@ -23,7 +23,11 @@ Rails.application.routes.draw do
 
   get '/filters' => 'filters#index'
 
-  resources :events
+  resources :events do
+    member do
+       put 'joingroup'
+    end
+  end
 
 
 end

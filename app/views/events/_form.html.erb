@@ -51,6 +51,7 @@
     <%= f.text_field :album, :class => "form-control" %>
   </div>
 
+  <% f.hidden_field :admin, value: @current_user.id %>
 
   <%= f.submit "Create Event", :class => "btn-event btn btn-outline-dark" %>
 <% end %>

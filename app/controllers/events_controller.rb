@@ -29,10 +29,12 @@ class EventsController < ApplicationController
 
   def edit
     @event = Event.find params[:id]
+    return unless @event.admin == @current_user.id
   end
 
   def update
     @event = Event.find params[:id]
+    return unless @event.admin == @current_user.id
     if @event.update(event_params)
       redirect_to event_path(@event.id)
     else
@@ -42,8 +44,15 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find params[:id]
+    return unless @event.admin == @current_user.id
     @event.destroy
     redirect_to events_path
+  end
+
+  def joingroup
+    @event = Event.find params[:id]
+    @user = User.find @current_user.id
+    @event.users << @user unless @event.users.exists?(@user.id)
   end
 
   private
@@ -53,7 +62,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:date, :location, :title, :description, :image, :album, :category_id)
+    params.require(:event).permit(:date, :location, :title, :description, :image, :album, :category_id, :admin, :user_id)
   end
 
 end
