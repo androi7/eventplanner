@@ -1,0 +1,54 @@
+<h1>Cool Events Near Me</h1>
+
+<style>
+  #map {
+       height: 40rem;
+       width: 40rem;
+     }
+
+     html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+</style>
+
+<div id="map"></div>
+
+
+<script>
+
+      const events = <%= @events.to_json.html_safe %>
+
+      function initMap() {
+        // var myLatLng = {lat: -25.363, lng: 131.044};
+
+        // create a bounding box object
+        var bounds = new google.maps.LatLngBounds();
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          // zoom: 12,
+          // center: { lat: events[0].latitude, lng: events[0].longitude }
+        });
+
+        for ( let i = 0; i < events.length; i++ ) {
+
+          const event = events[i];  // get the current item
+
+          var marker = new google.maps.Marker({
+            position: { lat: event.latitude, lng: event.longitude },
+            map: map,
+            title: event.title
+          });
+
+          // add the latest marker to the bounding box
+          bounds.extend(marker.position);
+        }
+
+        map.fitBounds(bounds);  // make the map fit within the box containing markers
+      }
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnrWs3SRGJ-lJ6tb4NTAj1118mGtjPcWQ&callback=initMap">
+</script>
