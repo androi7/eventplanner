@@ -28,8 +28,13 @@ c8 = Category.create! title: "Meditation", image: "meditation.jpg"
 
 Event.destroy_all
 
-e1 = Event.create! date: '2020-01-20', location: 'Sydney', title: 'Friendly Soccer Games', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a lectus molestie, convallis odio vitae, pulvinar urna. Donec purus nibh, sodales sed lacus nec, viverra elementum arcu. Duis lacinia pulvinar nisl ac placerat. Cras vehicula ac turpis vel tempor. Pellentesque venenatis, nibh non pharetra facilisis...', image: 'soccer-event.jpg', album: '', admin: u1, category_id: c2.id
+e1 = Event.create! date: '2020-01-20', location: 'Sydney', title: 'Friendly Soccer Games', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a lectus molestie, convallis odio vitae, pulvinar urna. Donec purus nibh, sodales sed lacus nec, viverra elementum arcu. Duis lacinia pulvinar nisl ac placerat. Cras vehicula ac turpis vel tempor. Pellentesque venenatis, nibh non pharetra facilisis...', image: 'soccer-event.jpg', album: '', admin: u1.id, category_id: c2.id
 e2 = Event.create! date: '2020-01-24', location: 'Melbourne', title: 'Video games party', description: 'Vestibulum ut enim eget lorem luctus maximus ut et erat. In condimentum eleifend molestie. Praesent turpis metus, placerat quis dapibus sed, euismod a dui.', image: 'game-event.jpg', album: '', admin: u2, category_id: c6.id
 e3 = Event.create! date: '2020-03-24', location: 'Sydney', title: 'Hackaton', description: 'Donec gravida blandit feugiat. Etiam ornare volutpat lacus eget vestibulum. Quisque cursus nec dolor quis tristique. Nam elementum, tellus nec iaculis lobortis, velit tellus cursus eros, vitae ornare quam nisi eu nulla...', image: 'hackaton-event.jpg', album: '', admin: u1, category_id: c2.id
 e4 = Event.create! date: '2020-02-11', location: 'Sydney', title: 'Bondi Coastal Walk', description: 'Curabitur faucibus lorem ut iaculis ornare. Nunc a sollicitudin lacus. Fusce convallis, nisi quis finibus tincidunt, lacus leo eleifend diam, eu laoreet metus tortor sit amet metus. Integer blandit at leo ut malesuada. Nam consequat, dui a interdum venenatis, lacus odio accumsan quam, nec bibendum velit leo a urna. In vulputate metus lobortis, convallis tellus vel, posuere odio.', image: 'coastwalk-event.jpg', album: '', admin: u3, category_id: c3.id
 e5 = Event.create! date: '2020-01-18', location: 'Sydney', title: 'Sydney Harbour Bridge', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a lectus molestie, convallis odio vitae, pulvinar urna. Donec purus nibh, sodales sed lacus nec, viverra elementum arcu. Duis lacinia pulvinar nisl ac placerat. Cras vehicula ac turpis vel tempor. Pellentesque venenatis, nibh non pharetra facilisis...', image: 'bridge-event.jpg', album: '', admin: u2, category_id: c5.id
+
+
+e1.users << u1 << u2 << u3
+e2.users << u1 << u3
+e3.users << u1 << u2

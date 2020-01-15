@@ -1,9 +1,21 @@
-<h2>Hello <%= @user.name %></h2>
+<h2 class="profile-name">Hello <%= @user.name %></h2>
+<%= link_to (image_tag "settings_applications-24px.svg", :class => "user-settings"), edit_user_path(@user.id) %>
 
-<p>Your Events:</p>
-<%= @user.events.each do |event| %>
+<p class="clear">Your Events:</p>
+<% @user.events.order(date: :asc).each do |event| %>
 
-<%= event.title %>
-<%= event.image %>
+    <div class="event-mini-container">
+      <%= link_to event_path(event.id) do %>
+      <div class="event-mini" style="background-image: url(<%= image_path event.image %>);">
+        <p class="event-title"><%= event.title %></p>
+      </div>
+      <% end %>
+      <p class="event-date"><%= event.date.strftime('%d. %b %Y') %>
 
+    </div>
+
+<% end %>
+
+<% unless @user.events.exists? %>
+<p>Join Events here: <%= link_to "Events", events_path, :class => "link-color" %></p>
 <% end %>

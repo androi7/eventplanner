@@ -6,7 +6,9 @@
       <% @events.each do |event| %>
         <%= link_to event_path(event.id) do %>
           <div class="event-card col-6">
+            <% if event.image.present? %>
             <%= image_tag event.image %>
+            <% end %>
             <div class="event-titles">
               <h2><%= event.title %></h2>
               <h2><%= event.location %></h2>
