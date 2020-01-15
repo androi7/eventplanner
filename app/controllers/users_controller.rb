@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.create user_params
     if @user.persisted?
       session[:user_id] = @user.id  # automatically logged in, but should log out after 24 hours (to-do)
-      redirect_to '/'
+      redirect_to events_path
     else
       # redirect_to '/users'
       render :new
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    check_ownership
   end
 
   def edit
