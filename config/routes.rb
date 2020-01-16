@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
 
-  root to: 'pages#index'
+  root to: 'session#new'
 
   get 'tests/map'
 
