@@ -6,7 +6,7 @@
 
     <div class="event-mini-container">
       <%= link_to event_path(event.id) do %>
-      <div class="event-mini" style="background-image: url(<%= image_path event.image %>);">
+      <div class="event-mini" style="background-image: url(<%= cl_image_path event.image %>);">
         <p class="event-title"><%= event.title %></p>
       </div>
       <% end %>

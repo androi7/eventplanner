@@ -12,10 +12,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id  # automatically logged in, but should log out after 24 hours (to-do)
       redirect_to events_path
     else
-      # redirect_to '/users'
       render :new
     end
-
   end
 
   def show

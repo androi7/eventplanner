@@ -14,28 +14,20 @@
     <header class="header">
       <div class="container">
         <nav class="navbar navbar-expand-sm">
-          <!-- <a class="navbar-brand" href="#">
-            <img src="" width="30" height="30">Home
-          </a> -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
-              <li class="nav-item"><%= link_to "Categories", categories_path, :class => "nav-link" %></li>
-              <li class="nav-item"><%= link_to "Events", filters_path,  :class => "nav-link" %></li>
+              <li class="nav-item <%= 'active' if current_page?(filters_path) %>"><%= link_to "Home", filters_path, :class => "nav-link" %></li>
+              <li class="nav-item <%= 'active' if current_page?(categories_path) %>"><%= link_to "Categories", categories_path, :class => "nav-link" %></li>
+              <li class="nav-item <%= 'active' if current_page?(events_path) %>"><%= link_to "Events", events_path,  :class => "nav-link" %></li>
             </ul>
-
-            <!-- <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form> -->
 
             <ul class="navbar-nav justify-content-end">
               <% if @current_user.present? %>
-                <li class="nav-item"><%= link_to @current_user.name, user_path(@current_user.id), :class => "nav-link" %></li>
-                <li class="nav-item"><%= link_to "Log out", logout_path, method: "delete", :class => "nav-link" %></li>
+                <li class="nav-item <%= 'active' if current_page?(user_path(@current_user.id)) %>"><%= link_to @current_user.name, user_path(@current_user.id), :class => "nav-link" %></li>
+                <li class="nav-item <%= 'active' if current_page?(login_path) %>"><%= link_to "Log out", logout_path, method: "delete", :class => "nav-link" %></li>
               <% else %>
                 <li class="nav-item"><%= link_to "Login", 'login', :class => "nav-link" %></li>
                 <li class="nav-item"><%= link_to "Signup", users_new_path, :class => "nav-link" %></li>

@@ -2,19 +2,18 @@
 
 <div class="row justify-content-md-center">
 
-
-
   <div class="card event-card col-md-6">
     <!-- <img src="..." class="card-img-top" alt="..."> -->
-    <div class="card-img-top card-background" style="background-image: url(<%= @event.image %>);">
-    </div>
-    <div class="card-body">
+    <div class="card-img-top card-background" style="background-image: url(<%= cl_image_path @event.image %>);">
       <h3 class="card-title"><%= @event.title %></h3>
       <h3><%= @event.date %></h3>
       <h3><%= @event.location %></h3>
+    </div>
+    <div class="card-body">
       <p class="card-text"><%= @event.description %></p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
+
 
     <!-- <div class="messages">
       <# @event.messages.reverse.each do   %>

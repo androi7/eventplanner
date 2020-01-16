@@ -22,6 +22,11 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.create event_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      @event.image = req["public_id"]
+    end
+
     if @event.save
       flash[:notice] = 'Event was successfully created.'
       redirect_to event_path(@event.id)

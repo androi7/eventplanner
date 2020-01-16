@@ -6,7 +6,7 @@
       <% @events.each do |event| %>
         <%= link_to event_path(event.id) do %>
           <div class="event-card col-6">
-            <%= image_tag event.image %>
+            <%= cl_image_tag event.image %>
             <div class="event-titles">
               <h2><%= event.title %></h2>
               <h2><%= event.location %></h2>

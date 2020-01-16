@@ -6,7 +6,7 @@ a, a:hover {
 
 .header {
   background-color: #000;
-  height: auto;
+  height: 4rem;
   width: 100%;
 }
 
@@ -14,38 +14,40 @@ a, a:hover {
   width: 100%;
 }
 
-/* ul li do not response properly according to responsive web design */
-.nav ul {
-  list-style: none;
+.navbar {
   height: 4rem;
-  width: 100%;
 }
 
-.nav ul li {
-  color: #fff;
+.collapse ul li {
   line-height: 4rem;
-  text-align: center;
-  margin-right: 0.5rem;
 }
 
-.login ul li {
-  width: 40%;
-}
 
-.nav ul li a {
+
+.collapse ul li a {
+  height: 4rem;
+  padding: 0 1rem;
   color: #fff;
   display: block;
   height: 100%;
-  text-decoration: none;
   transition: background 0.5s, color 0.5s;
   width: 100%;
 }
 
-.nav ul li a:hover {
+.collapse ul li a:hover {
+  height: 4rem;
+  padding: 0 1rem;
   color: #000;
   background-color: #fff;
-  text-decoration: none;
   transition: background 0.5s, color 0.5s;
+}
+
+.nav-item.active {
+  background-color: #fff;
+}
+
+.nav-item.active a {
+  color: black;
 }
 
 .main {
@@ -56,7 +58,7 @@ a, a:hover {
   background-color: #000;
   color: #fff;
   padding: 50px 0 35px 0;
-  height: 14rem;
+  min-height: 14rem;
 }
 
 .footer h3 {
@@ -76,6 +78,16 @@ a, a:hover {
    padding: 5px 0;
  }
 
+.category-title {
+  margin: 2rem 0 2rem 0;
+}
+
+.category-cards {
+  margin: 1rem 9rem 3rem 9rem;
+  background-color: rgb(228, 228, 228);
+  box-shadow: 0 0 25px 20px rgb(228, 228, 228);
+}
+
  .category-card,
  .event-card {
    color: #fff;
@@ -87,6 +99,7 @@ a, a:hover {
  .event-titles {
   color: #fff;
   position: absolute;
+  text-shadow: 0 0 5px black;
   left: 0;
   right: 0;
   text-align: center;
@@ -117,6 +130,8 @@ a, a:hover {
   padding: 0 20px 20px;
 }
 
+/* filters page */
+
 .filters {
   padding: 1rem;
 }
@@ -124,6 +139,16 @@ a, a:hover {
   padding: 4rem 0;
 }
 
+.card-title {
+  font-size: 1.8rem;
+}
+
+div.card.bg-dark:hover {
+  background-color: rgba(#343a40, 0.6);
+}
+
+
+/* forms */
 .user-form {
   border-radius: 0.5rem;
   background-color: rgb(245, 245, 245);
@@ -168,7 +193,7 @@ a, a:hover {
 }
 
 .profile-name {
-  margin-top: 2rem;
+  margin: 2rem 0 1.5rem 0;
   float: left;
 }
 
@@ -188,6 +213,7 @@ a, a:hover {
 
 .clear {
   clear: both;
+  margin: auto 0 2.5rem 0;
 }
 
 .link-color {
@@ -243,4 +269,16 @@ a, a:hover {
 
 .add-comment {
   color: black;
+}
+
+@media only screen and (max-width: 576px) {
+  h1.card-title {
+    font-size: 0.6rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h1.card-title {
+    font-size: 1.5rem;
+  }
 }

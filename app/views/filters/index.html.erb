@@ -1,7 +1,6 @@
-
 <div class="container filter-container">
   <div class="filters row justify-content-center">
-    <section class="col-md-3">
+    <section class="col-5 col-md-3">
       <%= link_to new_event_path do %>
       <div class="card bg-dark text-white">
         <%= image_tag "create-24px.svg", :class => 'card-img' %>
@@ -11,7 +10,7 @@
       </div>
       <% end %>
     </section>
-    <section class="col-md-3">
+    <section class="col-5 col-md-3">
       <div class="card bg-dark text-white">
         <%= image_tag "search-24px.svg", :class => 'card-img' %>
         <div class="card-img-overlay">
@@ -21,7 +20,7 @@
     </section>
   </div>
   <div class="filters row justify-content-center">
-    <section class="col-md-3">
+    <section class="col-5 col-md-3">
       <div class="card bg-dark text-white">
         <%= image_tag "favorite_border-24px.svg", :class => 'card-img' %>
         <div class="card-img-overlay">
@@ -29,13 +28,15 @@
         </div>
       </div>
     </section>
-    <section class="col-md-3">
+    <section class="col-5 col-md-3">
+      <%= link_to user_path(@current_user.id) do %>
       <div class="card bg-dark text-white">
         <%= image_tag "person_outline-24px.svg", :class => 'card-img' %>
         <div class="card-img-overlay">
           <h1 class="card-title text-center">My List</h1>
         </div>
       </div>
+      <% end %>
     </section>
   </div>
 </div>
