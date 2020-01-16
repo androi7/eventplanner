@@ -146,12 +146,51 @@ a, a:hover {
 
 .card-title {
   font-size: 1.8rem;
+  text-shadow: 0 0 5px black;
+}
+
+.card-background {
+  width: 100%;
+  height: 15rem;
+  padding: 2rem;
+  background-size: cover;
+}
+.event-card.main-card {
+  padding: 0;
+}
+
+.create-event {
+  margin: 2rem 0;
 }
 
 div.card.bg-dark:hover {
   background-color: rgba(#343a40, 0.6);
 }
 
+.comment {
+  margin: 1rem 0 2rem 2.4rem;
+}
+
+.user-and-post {
+  background-color: rgb(213, 213, 213);
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+  width: 70%;
+}
+
+p.user {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  margin: auto;
+}
+
+p.post {
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem;
+}
 
 /* forms */
 .user-form, .event-create_form {

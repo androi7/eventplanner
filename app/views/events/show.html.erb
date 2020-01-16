@@ -1,17 +1,17 @@
 
 
-<div class="row justify-content-md-center">
+<div class="row justify-content-md-center create-event">
 
-  <div class="card event-card col-md-6">
+  <div class="card main-card event-card col-md-6">
     <!-- <img src="..." class="card-img-top" alt="..."> -->
-    <div class="card-img-top card-background" style="background-image: url(<%= cl_image_path @event.image %>);">
+    <div class="card-img-top card-background" style="background-image: url(<%= cl_image_path @event.image%>);">
       <h3 class="card-title"><%= @event.title %></h3>
-      <h3><%= @event.date %></h3>
-      <h3><%= @event.location %></h3>
+      <h3 class="card-title"><%= @event.date %></h3>
+      <h3 class="card-title"><%= @event.location %></h3>
     </div>
     <div class="card-body">
+      <p>Category: <%= Category.find(@event.category_id).title %></p>
       <p class="card-text"><%= @event.description %></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
 
 
@@ -20,15 +20,17 @@
 
     </div> -->
     <% if @comment.present? %>
+      <div class="comment">
       <%= form_for @comment do |f| %>
         <%= f.text_field :post, :placeholder => 'Comment...' %>
         <%= f.hidden_field :user_id %>
         <%= f.hidden_field :event_id %>
-        <%= f.submit "Post", :class => "post-button" %>
+        <%= f.submit "Post", :class => "post-button bnt btn-primary" %>
       <% end %>
       <% @event.comments.each do |comment| %>
-        <div><p>Post from <%= comment.user.name %></p><p><%= comment.post  %></p></div>
+        <div class="user-and-post"><p class="user"><%= comment.user.name %></p><p class="post"><%= comment.post  %></p></div>
       <% end %>
+      </div>
     <% end %>
 
   </div>
