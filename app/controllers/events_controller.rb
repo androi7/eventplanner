@@ -5,11 +5,15 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-
   end
 
   def show
     @event = Event.find params[:id]
+    if @event.users.exists?(@current_user.id)
+      @comment = Comment.new
+      @comment.event_id = @event.id
+      @comment.user_id = @current_user.id
+    end
   end
 
   def new

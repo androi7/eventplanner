@@ -23,11 +23,17 @@ Rails.application.routes.draw do
 
   get '/filters' => 'filters#index'
 
+  get "events/:id/comments" => "events#add_comment", as: "add_event_comment"
+
+
   resources :events do
     member do
        put 'joingroup'
     end
   end
+
+  resources :comments, only: [:index, :new, :create, :show]
+  post '/events' => 'comments#create'
 
 
 end

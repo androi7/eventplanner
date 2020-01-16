@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
   belongs_to :event
-  has_one :user, :through => :event
+  belongs_to :user, optional: false 
 end

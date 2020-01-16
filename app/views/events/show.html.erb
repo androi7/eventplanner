@@ -1,6 +1,9 @@
 
 
 <div class="row justify-content-md-center">
+
+
+
   <div class="card event-card col-md-6">
     <!-- <img src="..." class="card-img-top" alt="..."> -->
     <div class="card-img-top card-background" style="background-image: url(<%= @event.image %>);">
@@ -12,5 +15,22 @@
       <p class="card-text"><%= @event.description %></p>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
+
+    <!-- <div class="messages">
+      <# @event.messages.reverse.each do   %>
+
+    </div> -->
+    <% if @comment.present? %>
+      <%= form_for @comment do |f| %>
+        <%= f.text_field :post, :placeholder => 'Comment...' %>
+        <%= f.hidden_field :user_id %>
+        <%= f.hidden_field :event_id %>
+        <%= f.submit "Post", :class => "post-button" %>
+      <% end %>
+      <% @event.comments.each do |comment| %>
+        <div><p>Post from <%= comment.user.name %></p><p><%= comment.post  %></p></div>
+      <% end %>
+    <% end %>
+
   </div>
 </div>
