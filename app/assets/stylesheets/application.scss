@@ -109,6 +109,7 @@ a, a:hover {
 
 .event-titles {
   margin: auto;
+  text-shadow: 0 0 5px black;
   background-color: rgba(0, 0, 0, 0.4);
   width: 90%;
 }
@@ -130,6 +131,10 @@ a, a:hover {
   padding: 0 20px 20px;
 }
 
+.category-show {
+  margin: 2rem auto;
+}
+
 /* filters page */
 
 .filters {
@@ -149,7 +154,7 @@ div.card.bg-dark:hover {
 
 
 /* forms */
-.user-form {
+.user-form, .event-create_form {
   border-radius: 0.5rem;
   background-color: rgb(245, 245, 245);
   box-shadow: 1px 1px 1px black;
@@ -157,11 +162,16 @@ div.card.bg-dark:hover {
   padding: 3rem;
 }
 
+.event-create_form .form-group {
+  margin: 0;
+}
+
 .btn-user {
   margin-top: 2rem;
 }
 
-.col-md-12.form-group {
+.col-md-12.form-group,
+.col-md-6.form-group {
   padding-left: 0;
 }
 
@@ -267,18 +277,38 @@ div.card.bg-dark:hover {
   width: 60%;
 }
 
+.events {
+  margin-bottom: 3rem;
+}
+
 .add-comment {
   color: black;
 }
 
+.join-button,
+.join-box {
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+}
+
+
 @media only screen and (max-width: 576px) {
-  h1.card-title {
+  h1.card-title, h2 {
     font-size: 0.6rem;
   }
+
 }
 
 @media only screen and (max-width: 768px) {
-  h1.card-title {
+  h1.card-title, h2 {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media only screen and (max-width: 992px) {
+  .event-titles h2 {
     font-size: 1.5rem;
   }
 }

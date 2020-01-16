@@ -7,7 +7,7 @@
 
   <div class="form-group col-md-6">
     <%= f.label :category %>
-    <%= f.select :category_id, Category.all.collect { |c| [c.title, c.id] }, {}, {:class => "custom-select custom-select-sm"} %>
+    <%= f.select :category_id, Category.all.collect { |c| [c.title, c.id] }, {}, {:class => "custom-select form-control-sm"} %>
   </div>
 
 
@@ -39,7 +39,7 @@
   </div> -->
   <div class="form-group col-md-12">
     <%= f.label :image %>
-    <%= f.cl_image_upload :image, :class => "form-control" %>
+    <%= f.cl_image_upload :image, :html => {:class => "form-control-file form-control-sm"} %>
   </div>
 
   <div class="form-group col-md-12">

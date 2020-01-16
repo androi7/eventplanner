@@ -8,6 +8,13 @@
           <% if event.image.present? %>
             <%= cl_image_tag(event.image) %>
           <% end %>
+          <% if event.users.include? @current_user %>
+            <label class="btn btn-success active join-box">
+              Member
+            </label>
+          <% else %>
+            <%= button_to "Join Event", joingroup_event_path(event.id), :method => :put, :class => "btn btn-primary join-button" %>
+          <% end %>
           <%= link_to event_path(event.id) do %>
             <div class="event-titles">
               <h2><%= event.title %></h2>
@@ -15,7 +22,7 @@
               <h2><%= date_format event.date %></h2>
             </div>
           <% end %>
-          <%= button_to "Join Event", joingroup_event_path(event.id), :method => :put %>
+
         </div>
       <% end %>
     </div>
