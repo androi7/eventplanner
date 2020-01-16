@@ -2,7 +2,8 @@
 <%= link_to (image_tag "settings_applications-24px.svg", :class => "user-settings"), edit_user_path(@user.id) %>
 
 <p class="clear">Your Events:</p>
-<% @user.events.order('date ASC').each do |event| %>
+<!-- <%# .order('date ASC') %>-->
+<% @user.events.each do |event| %>
 
     <div class="event-mini-container">
       <%= link_to event_path(event.id) do %>
