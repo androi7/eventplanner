@@ -225,10 +225,12 @@ p.post {
 
 .error-messages {
   margin: 2rem auto;
-  text-align: center;
+  padding-left: 0;
 }
 
 .error-messages li {
+  text-align: left;
+  font-size: 1rem;
   list-style: none;
   color: red;
 }

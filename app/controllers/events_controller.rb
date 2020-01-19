@@ -60,8 +60,7 @@ class EventsController < ApplicationController
 
   def joingroup
     @event = Event.find params[:id]
-    @user = User.find @current_user.id
-    @event.users << @user unless @event.users.exists?(@user.id)
+    @event.users << @current_user unless @event.users.exists?(@current_user.id)
   end
 
   private

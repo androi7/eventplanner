@@ -1,4 +1,17 @@
 <div class="event-create_form justify-content-center col-md-6">
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@event.errors.count, "error") %> occured:
+      </h2>
+      <ul class="error-messages">
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <%= form_for @event, :html => {:multipart => true} do |f| %>
   <div class="form-group col-md-12">
     <%= f.label :title %>
@@ -52,7 +65,7 @@
     <%= f.text_field :album, :class => "form-control" %>
   </div>
 
-  <% f.hidden_field :admin, value: @current_user.id %>
+  <%= f.hidden_field :admin, value: @current_user.id %>
 
   <%= f.submit "Create Event", :class => "btn-event btn btn-outline-dark" %>
 <% end %>
