@@ -7,7 +7,8 @@
 Link to Github Page [Event Planner](https://github.com/androi7/eventplanner)
 
 ## Screenshots
-
+![Game settings!](images/settings.png)
+![Game in process!](images/game.png)
 
 ## Functionalities
 1. It is mandatory to create an own account.
@@ -20,4 +21,4 @@ Link to Github Page [Event Planner](https://github.com/androi7/eventplanner)
 
 
 ## Bugs
-- When the user creates a new event, then it's not automatically showing that the creator of the event is directly member of it.
+- When the user creates a new event, then it's not automatically showing that the creator of the event is member of it until page is refreshed.
